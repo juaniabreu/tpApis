@@ -12,7 +12,7 @@ import java.util.List;
 public abstract class Cuenta {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "nro_cuenta")
     protected String nroCuenta;
     protected float saldo;

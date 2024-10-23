@@ -14,8 +14,10 @@ public class Cliente {
     private int numero;
     private String nombre;
     private String documento;
-    @ManyToMany(mappedBy = "clientes")
+    @ManyToMany(mappedBy = "clientes", fetch = FetchType.EAGER)
     private List<Cuenta> cuentas;
+
+
 
     public Cliente() {}
     public Cliente(String nombre, String documento) {
@@ -70,5 +72,14 @@ public class Cliente {
     public void agregarCuenta(Cuenta cuenta) {
         cuentas.add(cuenta);
         cuenta.agregarClienteCuenta(this);
+    }
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "numero=" + numero +
+                ", nombre='" + nombre + '\'' +
+                ", documento='" + documento + '\'' +
+                ", cuentas=" + cuentas +
+                '}';
     }
 }

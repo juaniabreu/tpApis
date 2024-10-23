@@ -4,6 +4,9 @@ package com.uade.cuentas.modelo;
 import java.util.Calendar;
 
 import com.uade.cuentas.exceptions.CuentaException;
+import jakarta.persistence.Entity;
+
+@Entity
 public class CuentaCorriente extends Cuenta{
 
     private float descubiertoHabilitado;
@@ -15,6 +18,10 @@ public class CuentaCorriente extends Cuenta{
         this.descubiertoHabilitado = descubiertoHabilitado;
         this.costoMantenimiento = costoMantenimiento;
         this.tasaDiariaDescubierto = tasaDiariaDescubierto;
+    }
+
+    public CuentaCorriente() {
+
     }
 
     @Override

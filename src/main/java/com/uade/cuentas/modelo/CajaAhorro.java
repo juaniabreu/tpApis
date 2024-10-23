@@ -3,12 +3,19 @@ package com.uade.cuentas.modelo;
 import java.util.Calendar;
 
 import com.uade.cuentas.exceptions.CuentaException;
+import jakarta.persistence.Entity;
+
+@Entity
 public class CajaAhorro extends Cuenta {
     private float tasaInteres;
 
     public CajaAhorro(Cliente cliente) {
         super(cliente);
         this.tasaInteres = 1.8f;
+    }
+
+    public CajaAhorro() {
+
     }
 
     @Override
